@@ -1,0 +1,14 @@
+.IncomeStyled{
+    display: flex;
+    overflow: auto;
+}
+
+.IncomeStyled .income-content{
+    display: flex;
+    gap:2rem;
+}
+
+.IncomeStyled .income-content .incomes{
+    flex: 1;
+    
+}

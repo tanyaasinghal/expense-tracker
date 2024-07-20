@@ -1,0 +1,19 @@
+
+[
+    {
+        "title" :"salary",
+        "description":"monthly salary",
+        "amount": 5000,
+        "date": "01-08-2003",
+        "type": "income",
+        "category":"salary"
+    },
+    {
+        "title" :"salary",
+        "description":"monthly salary",
+        "amount": 5000,
+        "date": "01-08-2003",
+        "type": "income",
+        "category":"bitcoin"
+    }
+]
