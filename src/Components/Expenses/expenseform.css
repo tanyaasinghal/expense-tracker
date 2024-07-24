@@ -1,12 +1,12 @@
-.FormStyled{
+.ExpenseFormStyled{
     display: flex;
     flex-direction: column;
     gap:1rem;
 }
 
-.FormStyled input, 
-.FormStyled textarea, 
-.FormStyled select{
+.ExpenseFormStyled input, 
+.ExpenseFormStyled textarea, 
+.ExpenseFormStyled select{
     font-family: inherit;
     font-size: inherit;
     outline: none;
@@ -20,8 +20,8 @@
     color: rgba(34, 34, 96, 0.9);
 }
 
-.FormStyled input::placeholder,
-.FormStyled textarea::placeholder{
+.ExpenseFormStyled input::placeholder,
+.ExpenseFormStyled textarea::placeholder{
     color: rgba(34,34,96,0.4);
 }
 

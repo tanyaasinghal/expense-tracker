@@ -4,28 +4,38 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import Button from '../Button/Button';
 import { plus } from '../../utils/Icons';
+import { useGlobalContext } from '../../context/globalContext';
 
 function Form(){
-    // const {addIncome}= useGlobalContext()
+    const {addIncome, getIncomes, error, setError}= useGlobalContext()
     const[inputState, setInputState] = useState({
         title:'',
         amount:'',
         date:'',
         category:'',
         description:'',
-    })
+    });
 
     const {title, amount, date, category, description} = inputState;
     
     const handleInput= name=> e=> {
         setInputState({...inputState, [name]: e.target.value})
+        setError('');
     }
     const handleSubmit= e=> {
         e.preventDefault()
-        // addIncome(inputState)
+        addIncome(inputState)
+        getIncomes();
+        setInputState({
+            title:'',
+            amount:'',
+            date:'',
+            category:'',
+            description:'',
+        })
     }
     return(
-        <div className= 'FormStyled' onSubmit={handleSubmit}>
+        <form className= 'FormStyled' onSubmit={handleSubmit}>
             <div className='input-control'>
                 <input 
                 type='text'
@@ -36,16 +46,17 @@ function Form(){
                 />
             </div>
             <div className='input-control'>
-                <input value={amount}
+                <input
+                value={amount}
                 type='text'
                 name= {'amount'}
-                placeholder={'Salary Amount'}
+                placeholder='Salary Amount'
                 onChange= {handleInput('amount')}
                 />
                 </div>
                 <div className='input-control'>
                     <DatePicker 
-                    id= 'date'
+                    id= "date"
                     placeholderText='Enter A Date'
                     selected={date}
                     dateFormat="dd/MM/yyyy"
@@ -68,21 +79,21 @@ function Form(){
                     </select>
                 </div>
                 <div className='input-control'>
-                    <textarea name='description' value={description} placeholder='Add a Reference' id='description' cols='30' rows='4' onChange={handleInput('description')}></textarea>
+                    <textarea name='description' value={description} placeholder='Add a Reference' id='description' cols='30' rows='3' onChange={handleInput('description')}></textarea>
                 </div>
                 <div className="submit-btn">
                     <Button 
-                        name={'Add Income'}
+                        name='Add Income'
                         icon={plus}
-                        bPad={'.8rem 1.6rem'}
-                        bRad= {'30px'}
-                        bg={'var(--color-accent'}
-                        color={'#fff'}
+                        bPad='.6rem 1.5rem'
+                        bRad= '30px'
+                        bg='var(--color-accent'
+                        color='#fff'
                     />
 
                 </div>
-        </div>
-    )
+        </form>
+    );
 }
 
 export default Form;

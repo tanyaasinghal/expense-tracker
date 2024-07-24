@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './dashboard.css';
 import '../../styles/Layouts.css';
+import { useGlobalContext } from '../../context/globalContext';
 
-function Dashboard(){
-    return(
-            <div className='DashboardStyled'>
-                <div className='innerLayout'>
-                    
-                </div>
+
+
+function Dashboard() {
+    const { getIncomes } = useGlobalContext();
+
+    useEffect(() => {
+        getIncomes();
+    }, [])
+    return (
+        <div className='DashboardStyled'>
+            <div className='innerLayout'>
 
             </div>
+
+        </div>
     )
 }
 

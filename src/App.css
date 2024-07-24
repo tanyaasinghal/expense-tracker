@@ -1,7 +1,7 @@
 .app {
     height: 100vh;
     position: relative;
-    overflow: hidden; /* Ensure any overflowing content is hidden */
+    overflow: hidden; 
 }
 
 .background {
@@ -10,13 +10,13 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Ensure the background div is behind other content */
+    z-index: -1; 
 }
 
 .background img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image covers the entire div */
+    object-fit: cover; 
     position: absolute;
     top: 0;
     left: 0;
@@ -27,7 +27,6 @@
     border: 3px solid #FFFFFF;
     backdrop-filter: blur(4.5px);
     border-radius: 32px;
-    overflow: auto;
     overflow-x: hidden;
 }
 main::-webkit-scrollbar {
